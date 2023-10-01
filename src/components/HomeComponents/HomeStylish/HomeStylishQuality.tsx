@@ -4,7 +4,6 @@ import HomeStylishPhotos from "./HomeStylishPhotos";
 import HomeShopAnimation from "../HomeShopComponents/HomeShopAnimation";
 
 export default function HomeStylishQuality() {
-  const elementRef = useRef(null)
 
 
 
