@@ -3,6 +3,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BsCart3, BsSearch } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { modalIsOpen, ModalState } from "../../redux/features/modalSlice";
 
 export default function NavRight() {
@@ -29,7 +30,9 @@ export default function NavRight() {
       )}
       <div className="flex gap-x-2 ">
         <BsSearch className="links" onClick={() => setIsOpen(true)} />
+        <Link to="/Account">
         <AiOutlineUser className="links" />
+        </Link>
         <BsCart3 className="links" />
         <FaBars
           className="cursor-pointer md:hidden links"

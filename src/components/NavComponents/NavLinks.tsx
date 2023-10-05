@@ -6,9 +6,9 @@ export default function NavLinks() {
     <ul className="md:flex gap-x-4 hidden tracking-widest">
       <Link to="/" className="links">Home</Link>
       <Link to="/About" className="links">About</Link>
-      <li className="links">Shop</li>
+      <Link to="/Shop" className="links">Shop</Link>
       <li className="links">news</li>
-      <li className="links">contact</li>
+      <Link to="/Contact" className="links">contact</Link>
     </ul>
   );
 }
