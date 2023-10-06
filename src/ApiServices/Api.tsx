@@ -5,6 +5,7 @@ export const products = [
     image: "./product-1.png",
     prices: [{ price: "$359.00", salePrice: null }],
     category: "Watch",
+    quantity: 0,
   },
   {
     name: "ApexGuard",
@@ -12,6 +13,7 @@ export const products = [
     image: "./product-2.png",
     prices: [{ price: "$429.00", salePrice: "$399.00" }],
     category: "Watch",
+    quantity: 0,
   },
   {
     name: "Canyon Harmony",
@@ -19,6 +21,7 @@ export const products = [
     image: "./product-3.png",
     prices: [{ price: "$59.00", salePrice: "$49.00" }],
     category: "Bracelet",
+    quantity: 0,
   },
   {
     name: "ChronoTrigger",
@@ -26,6 +29,7 @@ export const products = [
     image: "./product-4.png",
     prices: [{ price: "$679.00", salePrice: null }],
     category: "Watch",
+    quantity: 0,
   },
   {
     name: "DigitalEdge",
@@ -33,6 +37,7 @@ export const products = [
     image: "./product-5.png",
     prices: [{ price: "$489.00", salePrice: null }],
     category: "Smartwatch",
+    quantity: 0,
   },
   {
     name: "DynaChrono",
@@ -40,6 +45,7 @@ export const products = [
     image: "./product-6.png",
     prices: [{ price: "$459.00", salePrice: null }],
     category: "Watch",
+    quantity: 0,
   },
   {
     name: "Flare Glaciers",
@@ -47,6 +53,7 @@ export const products = [
     image: "./product-7.png",
     prices: [{ price: "$149.00", salePrice: null }],
     category: "Glasses",
+    quantity: 0,
   },
   {
     name: "Galactic Gazers",
@@ -54,6 +61,7 @@ export const products = [
     image: "./product-8.png",
     prices: [{ price: "$129.00", salePrice: "$99.00" }],
     category: "Glasses",
+    quantity: 0,
   },
   {
     name: "Leather Band",
@@ -61,6 +69,7 @@ export const products = [
     image: "./product-9.png",
     prices: [{ price: "$79.00", salePrice: null }],
     category: "Bracelet",
+    quantity: 0,
   },
   {
     name: "Metro Shadows",
@@ -68,6 +77,7 @@ export const products = [
     image: "./product-10.png",
     prices: [{ price: "$99.00", salePrice: null }],
     category: "Glasses",
+    quantity: 0,
   },
   {
     name: "Mirage Dunes",
@@ -75,6 +85,7 @@ export const products = [
     image: "./product-11.png",
     prices: [{ price: "$79.00", salePrice: null }],
     category: "Glasses",
+    quantity: 0,
   },
   {
     name: "Noble Crest",
@@ -82,6 +93,7 @@ export const products = [
     image: "./product-12.png",
     prices: [{ price: "$129.00", salePrice: null }],
     category: "Bracelet",
+    quantity: 0,
   },
   {
     name: "PrestigeHorizons",
@@ -89,6 +101,7 @@ export const products = [
     image: "./product-13.png",
     prices: [{ price: "$379.00", salePrice: "$319.00" }],
     category: "Watch",
+    quantity: 0,
   },
   {
     name: "Rustic Rhythm",
@@ -96,6 +109,7 @@ export const products = [
     image: "./product-14.png",
     prices: [{ price: "$79.00", salePrice: null }],
     category: "Bracelet",
+    quantity: 0,
   },
   {
     name: "SmartSync",
@@ -103,6 +117,7 @@ export const products = [
     image: "./product-15.png",
     prices: [{ price: "$289.00", salePrice: null }],
     category: "Smartwatch",
+    quantity: 0,
   },
   {
     name: "Spartan Chain",
@@ -110,6 +125,7 @@ export const products = [
     image: "./product-16.png",
     prices: [{ price: "$359.00", salePrice: "$329.00" }],
     category: "Bracelet",
+    quantity: 0,
   },
   {
     name: "Sport Luxe",
@@ -117,6 +133,7 @@ export const products = [
     image: "./product-17.png",
     prices: [{ price: "$249.00", salePrice: "$199.00" }],
     category: "Glasses",
+    quantity: 0,
   },
   {
     name: "Tribal Wristlet",
@@ -124,6 +141,7 @@ export const products = [
     image: "./product-18.png",
     prices: [{ price: "$189.00", salePrice: null }],
     category: "Bracelet",
+    quantity: 0,
   },
   {
     name: "UrbanLuxury",
@@ -131,6 +149,7 @@ export const products = [
     image: "./product-19.png",
     prices: [{ price: "$279.00", salePrice: null }],
     category: "Watch",
+    quantity: 0,
   },
   {
     name: "Vanguard Tints",
@@ -138,7 +157,6 @@ export const products = [
     image: "./product-20.png",
     prices: [{ price: "$179.00", salePrice: null }],
     category: "Glasses",
+    quantity: 0,
   },
 ];
-
-

@@ -30,7 +30,9 @@ export default function Home() {
       <HomeCompare />
       <HomeBlog />
       <HomeFeatured />
-      <HomeTestimonials />
+      <HomeTestimonials title="TESTIMONIALS"  header="Happy Customers"  para="Don't take it from us. Check out the glowing testimonials from our satisfied customers."/>
     </>
   );
 }
+
+

@@ -1,14 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { products } from "../../ApiServices/Api";
+import {
+  addtoCart,
+  CartItem,
+  CartProps,
+  Props1,
+} from "../../redux/features/cartSlice";
+import {
+  CounterProps,
+  increment,
+  setCounter,
+} from "../../redux/features/counterSlice";
 import HomeProductCards, {
   HomeProductCardsProps,
 } from "../HomeComponents/Shop/HomeProductCards";
+
+export interface Props {
+  name?: string;
+  code?: string;
+  image: string;
+  category?: string;
+  prices?: {
+    price?: string;
+    salePrice?: string | null;
+  }[];
+  quantity: number;
+}
 
 export default function ShopMain({
   filteredProducts,
 }: {
   filteredProducts: HomeProductCardsProps[];
 }) {
+  const cart = useSelector((state: CartProps) => state.cart.cart);
+  const counter = useSelector((state: CounterProps) => state.counter.counter);
+  console.log(counter);
+  console.log(cart);
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selected, setSelected] = useState<number>(1);
 
@@ -17,7 +46,7 @@ export default function ShopMain({
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
   const page = [];
-  
+
   for (let i = 0; i < totalPages; i++) {
     page.push(i);
   }
@@ -26,10 +55,79 @@ export default function ShopMain({
     setCurrentPage(newPage);
     setSelected(newPage);
   }
-
   let homeCompare = true;
   let homeTopSellingHeight = true;
   let homeTopSelling = true;
+
+  useEffect(() => {}, []);
+  const dispatch = useDispatch();
+  function handleCartAdd(item: HomeProductCardsProps) {
+    if (item.name) {
+      const newItem: CartItem = {
+        name: item.name,
+        image: item.image,
+        prices: item.prices,
+        quantity: 1,
+      };
+      dispatch(addtoCart(newItem));
+      dispatch(increment());
+    }
+  }
+
+  interface CharacterProps {
+    name: string;
+    height: number;
+    mass: number;
+    eyeColor: string;
+    gender: string;
+  }
+  const characters: CharacterProps[] = [
+    {
+      name: "Luke Skywalker",
+      height: 172,
+      mass: 72,
+      eyeColor: "blue",
+      gender: "male",
+    },
+    {
+      name: "Leia Organa",
+      height: 150,
+      mass: 49,
+      eyeColor: "brown",
+      gender: "female",
+    },
+    {
+      name: "Han Solo",
+      height: 180,
+      mass: 80,
+      eyeColor: "brown",
+      gender: "male",
+    },
+    {
+      name: "Darth Vader",
+      height: 202,
+      mass: 136,
+      eyeColor: "yellow",
+      gender: "male",
+    },
+    {
+      name: "Princess Amidala",
+      height: 185,
+      mass: 45,
+      eyeColor: "brown",
+      gender: "female",
+    },
+    {
+      name: "Obi-Wan Kenobi",
+      height: 182,
+      mass: 121,
+      eyeColor: "blue",
+      gender: "male",
+    },
+  ];
+
+console.log(characters.reduce((acc, curr) => acc + curr.height, 0))
+console.log(characters.reduce((acc, curr) => acc + Math.floor(curr.mass * 3 / 4), 0))
 
   return (
     <>
@@ -77,11 +175,12 @@ export default function ShopMain({
                   <p className="text-[#666] mb-4">{item.price}</p>
                 ))}
                 <button
+                  onClick={() => handleCartAdd(item)}
                   className={`hover:bg-white duration-500 bg-black text-white hover:text-black ease-in-out hover:border-black border tracking-widest text-sm uppercase  rounded-lg ${
                     homeCompare ? "px-4 py-2" : "px-10 py-3"
                   }`}
                 >
-                  View Product
+                  Add to cart
                 </button>
               </div>
             </div>
@@ -149,3 +248,18 @@ pageNumber === 0 && pageNumber + 1
 {startingIndex >= 8 && (
 <button onClick={() => handlePrevClick()}>prev</button>
 )} */
+
+// Add to cart feature:
+
+// Todo:
+// * Take filter product from array to object
+// * when i click add to cart i will add the current item quanitiy to 1 or if item is already in
+// array i will add prev item with quanity + 1
+// * Nav counter will update based on items in cart
+// * Add counter + cart in redux
+
+// Task: 1
+// Finding item based on ID:
+// * I will use .find method to find item based on the current id or current name
+// * Once item is found i will have terany opperator to check if item is already in cart
+// if item is already in cart add the item's quanitiy + 1 if item is not in cart add the item

@@ -31,7 +31,7 @@ export default function Shop() {
       value === ""
         ? defaultProducts
         : defaultProducts.filter((item) => item.category === value);
-        setFilteredProducts(filtered)
+    setFilteredProducts(filtered);
   }
 
   useEffect(() => {

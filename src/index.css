@@ -178,16 +178,19 @@ body {
   }
 }
 
-
 .slide-in__right-to__left {
-  animation: slide-left 1s ease-in-out
+  animation: slide-left 1s ease-in-out;
 }
-
 
 @keyframes slide-left {
   0% {
     transform: translateX(0%);
-  } 100% {
+  }
+  100% {
     transform: translateX(100%);
   }
+}
+
+.text-news {
+  @apply text-[#a27a25] hover:border-b-[#a27a25] hover:border-b uppercase text-sm tracking-wider
 }

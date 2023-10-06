@@ -7,7 +7,7 @@ export default function NavLinks() {
       <Link to="/" className="links">Home</Link>
       <Link to="/About" className="links">About</Link>
       <Link to="/Shop" className="links">Shop</Link>
-      <li className="links">news</li>
+      <Link to="/News" className="links">news</Link>
       <Link to="/Contact" className="links">contact</Link>
     </ul>
   );

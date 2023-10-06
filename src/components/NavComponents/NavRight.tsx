@@ -4,6 +4,7 @@ import { BsCart3, BsSearch } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { CounterProps } from "../../redux/features/counterSlice";
 import { modalIsOpen, ModalState } from "../../redux/features/modalSlice";
 
 export default function NavRight() {
@@ -13,6 +14,7 @@ export default function NavRight() {
   const isModalOpen = useSelector(
     (state: ModalState) => state.navSmallBar.navModal
   );
+  const counter = useSelector((state: CounterProps) => state.counter.counter);
 
   return (
     <div
@@ -31,9 +33,16 @@ export default function NavRight() {
       <div className="flex gap-x-2 ">
         <BsSearch className="links" onClick={() => setIsOpen(true)} />
         <Link to="/Account">
-        <AiOutlineUser className="links" />
+          <AiOutlineUser className="links" />
         </Link>
-        <BsCart3 className="links" />
+        <div className="relative">
+          <BsCart3 className="links" />
+          {counter > 0 && (
+            <div className="absolute text-sm text-white flex justify-center items-center -right-1 -top-3 rounded-full w-5 h-5 bg-red-500">
+              {counter}
+            </div>
+          )}
+        </div>
         <FaBars
           className="cursor-pointer md:hidden links"
           onClick={() => dispatch(modalIsOpen())}

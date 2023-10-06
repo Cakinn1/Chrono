@@ -8,7 +8,7 @@ export interface TestimonialsProps {
   paragraph: string;
 }
 
-export default function HomeTestimonials() {
+export default function HomeTestimonials({header, para, title}: {title: string, header: string, para: string}) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [startIndex, setStartIndex] = useState<number>(0);
   const [endIndex, setEndIndex] = useState<number>(0);
@@ -84,14 +84,13 @@ export default function HomeTestimonials() {
             className={`uppercase tracking-wider ${titleAnimation}`}
             ref={titleRef}
           >
-            testimonials
+           {title}
           </h1>
           <h2 className={`text-6xl ${headerAnimation}`} ref={headerRef}>
-            Happy Customers
+          {header}
           </h2>
-          <p className={`${paragraphAnimation}`} ref={paragraphRef}>
-            Don't take it from us. Check out the glowing testimonials from our
-            satisfied customers.
+          <p className={`${paragraphAnimation} max-w-[700px] text-center`} ref={paragraphRef}>
+           {para}
           </p>
         </div>
 
