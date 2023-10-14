@@ -35,7 +35,7 @@ export default function ShopTopBar({
     <div className="bg-white  pt-[116px] relative">
       {isOpen && (
         <div
-          className={`fixed z-50  top-0 right-0 w-1/3 h-[116vh] bg-white ${
+          className={`fixed z-50  top-0 right-0 w-full md:w-1/2 lg:w-1/3 h-[116vh] bg-white ${
             isClosing ? "slide-in-right" : "slide-in__right-to__left"
           }`}
         >

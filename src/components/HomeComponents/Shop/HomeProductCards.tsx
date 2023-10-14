@@ -8,8 +8,8 @@ export interface HomeProductCardsProps {
   image: string;
   category?: string
   prices?: {
-    price?: string;
-    salePrice?: string | null;
+    price?: number;
+    salePrice?: number | null;
   }[];
   handleNextClick?: () => void;
   handlePrevClick?: () => void;
@@ -81,7 +81,7 @@ export default function HomeProductCards({
             <>
               {item.salePrice && (
                 <p className="absolute right-3 top-3 text-sm bg-black px-4 py-1 rounded-md text-white ">
-                  {item.salePrice ? "Sale" : ""}
+                  {item.salePrice.toFixed(2) ? "Sale" : ""}
                 </p>
               )}
             </>
@@ -89,7 +89,7 @@ export default function HomeProductCards({
           <p className="mb-4">{code}</p>
 
           {prices?.map((item) => (
-            <p className="text-[#666] mb-4">{item.price}</p>
+            <p className="text-[#666] mb-4">${item.price?.toFixed(2)}</p>
           ))}
           <button
             className={`hover:bg-white duration-500 bg-black text-white hover:text-black ease-in-out hover:border-black border tracking-widest text-sm uppercase  rounded-lg ${

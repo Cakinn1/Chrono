@@ -5,15 +5,16 @@ export default function Contact() {
     window.scrollTo({ top: 0 });
   }, []);
   return (
+    <div className="bg-white">
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="mx-auto max-w-[1300px]  py-[116px] space-y-4 bg-white"
+      className="mx-auto max-w-[1300px]  py-[116px] space-y-4 "
     >
       <div className="flex justify-center items-center py-12">
         <h1 className="text-6xl">Contact</h1>
       </div>
-      <div className="w-[800px] mx-auto px-6">
-        <p className="text-[#383f40] text-[17px]">
+      <div className="md:w-[800px] mx-auto px-6">
+        <p className="text-[#383f40] text-[17px] text-center md:text-left">
           We value open communication with our customers and are here to assist
           you every step of the way. Feel free to reach out to us through our
           contact form or email, and our dedicated customer support team will
@@ -46,7 +47,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="w-[800px] mx-auto space-y-3 px-6">
+      <div className="md:w-[800px] mx-auto space-y-3 px-6">
         <div className="flex gap-x-4">
           <h1 className="font-bold">Message</h1>
         </div>
@@ -61,5 +62,7 @@ export default function Contact() {
         </button>
       </div>
     </form>
+    </div>
+
   );
 }

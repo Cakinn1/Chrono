@@ -8,11 +8,11 @@ export default function useAnimation() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(entry.isIntersecting, 'is this true?')
+            // console.log(entry.isIntersecting, 'is this true?')
             setInViewPort(true);
           } else {
             setInViewPort(false);
-            console.log(entry.isIntersecting, 'is this false?')
+            // console.log(entry.isIntersecting, 'is this false?')
           }
         });
       },

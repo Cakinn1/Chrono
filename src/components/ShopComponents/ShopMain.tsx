@@ -22,8 +22,8 @@ export interface Props {
   image: string;
   category?: string;
   prices?: {
-    price?: string;
-    salePrice?: string | null;
+    price?: number;
+    salePrice?: number | null;
   }[];
   quantity: number;
 }
@@ -172,7 +172,7 @@ console.log(characters.reduce((acc, curr) => acc + Math.floor(curr.mass * 3 / 4)
                 <p className="mb-4">{item.code}</p>
 
                 {item.prices?.map((item) => (
-                  <p className="text-[#666] mb-4">{item.price}</p>
+                  <p className="text-[#666] mb-4">${item.price?.toFixed(2)}</p>
                 ))}
                 <button
                   onClick={() => handleCartAdd(item)}

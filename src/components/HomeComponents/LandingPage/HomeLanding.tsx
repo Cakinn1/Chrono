@@ -12,13 +12,13 @@ export default function HomeLanding() {
     window.scrollTo({ top: scrollToPostions, behavior: "smooth" });
   }
 
-  useEffect(() => {
-    if (window.scrollY >= 600) {
-      setShowScroll(true);
-    } else {
-      setShowScroll(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.scrollY >= 600) {
+  //     setShowScroll(true);
+  //   } else {
+  //     setShowScroll(false);
+  //   }
+  // }, []);
   return (
     <>
       <div

@@ -35,14 +35,14 @@ export default function NavRight() {
         <Link to="/Account">
           <AiOutlineUser className="links" />
         </Link>
-        <div className="relative">
+        <Link to="/Cart" className="relative">
           <BsCart3 className="links" />
           {counter > 0 && (
             <div className="absolute text-sm text-white flex justify-center items-center -right-1 -top-3 rounded-full w-5 h-5 bg-red-500">
               {counter}
             </div>
           )}
-        </div>
+        </Link>
         <FaBars
           className="cursor-pointer md:hidden links"
           onClick={() => dispatch(modalIsOpen())}

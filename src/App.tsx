@@ -8,54 +8,42 @@ import Shop from "./pages/Shop";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
 import { useEffect, useState } from "react";
-import { IsActiveState } from "./redux/features/isactiveSlice";
+import { IsActiveState, isActiveOpen } from "./redux/features/isactiveSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { isActiveClose } from "./redux/features/isactiveSlice";
 import { AiOutlineLoading } from "react-icons/ai";
 import Footer from "./pages/Footer";
 import Account from "./components/accountComponents/Account";
 import Login from "./components/accountComponents/Login";
+import Testing from "./pages/LoadingPage";
+import LoadingPage from "./pages/LoadingPage";
+import Cart from "./pages/Cart";
 
 function App() {
-  const [showScroll, setShowScroll] = useState<boolean>(false);
   const homePageLoading = useSelector(
     (state: IsActiveState) => state.isActive.active
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch(isActiveClose());
-    }, 1000);
-  }, []);
-
-  if (homePageLoading) {
-    document.body.classList.add("disable-scroll");
-  } else {
-    document.body.classList.remove("disable-scroll");
-  }
-
-  useEffect(() => {
-    if (window.scrollY >= 600) {
-      setShowScroll(true);
+    if (homePageLoading) {
+      document.body.classList.add("disable-scroll");
     } else {
-      setShowScroll(false);
+      document.body.classList.remove("disable-scroll");
     }
+    const timer = setTimeout(() => {
+      dispatch(isActiveClose());
+    }, 1900);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
     <>
       <Router>
-        {/* {homePageLoading && (
-          <div
-            className={`h-[100vh] animate-appear  flex justify-center items-center text-white bg-[#1b1b1b] z-50 ${
-              homePageLoading ? "" : ""
-            }`}
-          >
-            <AiOutlineLoading className="animate-spin text-4xl" />
-          </div>
-        )} */}
-
+        {homePageLoading && <LoadingPage />}
         <LimtedTime />
         <NavSmallBar />
         <Nav />
@@ -67,6 +55,7 @@ function App() {
           <Route path="/News" element={<News />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Account" element={<Account />} />
+          <Route path="/Cart" element={<Cart />} />
           {/* Single card item needs adding  */}
         </Routes>
         {/*  Open sign up modal, sign in modal */}
@@ -91,9 +80,6 @@ export default App;
 
 // Make everything required
 
-
-
-
 // Go through newly created pages and make everything reponsive.
 // Thinking of completeting everything else first then coming back
-// to finish the landing page fixed position part 
+// to finish the landing page fixed position part
